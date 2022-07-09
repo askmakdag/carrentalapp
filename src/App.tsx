@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import carService from "./services/carService";
 
 function App() {
+
+  useEffect(() => {
+    carService.getCars().then((res) => console.log('res: ', res))
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
