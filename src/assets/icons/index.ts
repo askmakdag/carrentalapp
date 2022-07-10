@@ -1,0 +1,11 @@
+export const AngleDown: string = require("./angle-down.svg").default;
+export const AngleLeft: string = require("./angle-left.svg").default;
+export const AngleRight: string = require("./angle-right.svg").default;
+export const AngleUp: string = require("./angle-up.svg").default;
+export const Bag: string = require("./bag.svg").default;
+export const Door: string = require("./door.svg").default;
+export const Fuel: string = require("./fuel.svg").default;
+export const Person: string = require("./person.svg").default;
+export const Plane: string = require("./plane.svg").default;
+export const SnowFlake: string = require("./snowflake.svg").default;
+export const Transmission: string = require("./transmission.svg").default;

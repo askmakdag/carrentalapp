@@ -1,10 +1,6 @@
 import {AnyAction, configureStore, Middleware, Dispatch} from '@reduxjs/toolkit'
-import cars from "./state/cars";
-import createSagaMiddleware from 'redux-saga'
-import {rootSaga} from "./sagas";
-
-const saga = createSagaMiddleware();
-const middleware: Middleware<any, any, Dispatch<AnyAction>>[] = [saga];
+import main from "./mainSlice";
+const middleware: Middleware<any, any, Dispatch<AnyAction>>[] = [];
 
 if (process.env.NODE_ENV === `development`) {
     // loads the redux-logger lib only if in the __DEV__ mode
@@ -14,12 +10,9 @@ if (process.env.NODE_ENV === `development`) {
 
 export const store = configureStore({
     reducer: {
-        cars,
+        main,
     },
-    middleware,
-});
-
-saga.run(rootSaga);
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(middleware)});
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
