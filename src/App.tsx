@@ -1,33 +1,45 @@
-import React, {useEffect} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {Container} from "./components/styled/Container.styled";
-import {Button} from "./components/styled/Button.styled";
 import Card from "./components/Card";
 import {useDispatch} from "react-redux";
 import {useAppSelector} from "./hooks/store-hooks";
 import {getTheFeed} from "./store/mainSlice";
+import StyledText from "./components/styled/Text.styled";
 
 function App() {
   const dispatch = useDispatch();
   const {feed} = useAppSelector(s => s.main);
+  const [cards, setCards] = useState<JSX.Element[]>();
+
+  const generateCards = useCallback(() => {
+      const vehicles: JSX.Element[] = [];
+      feed?.forEach((rentalFeed) => {
+         rentalFeed.VehAvailRSCore.VehVendorAvails.forEach((vehVendorAvail) => {
+             vehVendorAvail.VehAvails.forEach((vehicle) => {
+                 vehicles.push(
+                     <Card
+                         item={vehicle}
+                         vendor={vehVendorAvail.Vendor}
+                         vehRentalCore={rentalFeed.VehAvailRSCore.VehRentalCore}
+                     />
+                 );
+             });
+         });
+      });
+      setCards(vehicles);
+  }, [feed]);
 
   useEffect(() => {
       // @ts-ignore
       dispatch(getTheFeed());
-  }, [])
-
-  const handleClick =()=> {}
+      generateCards();
+  }, [generateCards, dispatch])
 
   return (
-      <Container>
-        <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        {feed?.[0]?.VehAvailRSCore?.VehVendorAvails?.[0].VehAvails.map((item) => {
-            return <Card item={item} />
-        })}
-
-        <Button bg={'red'} color={'#fff'} onClick={handleClick}>Tsmsm La</Button>
-      </Container>
+    <Container>
+        <StyledText variant={"subtitleMedium"}>sdfsfs</StyledText>
+        {cards}
+    </Container>
   );
 }
 

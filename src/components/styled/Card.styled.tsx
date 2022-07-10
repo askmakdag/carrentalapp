@@ -26,6 +26,10 @@ export const StyledCard = styled.div`
     align-items: center
   }
   
+  h6 {
+    margin: 8px;
+  }
+  
   & > div {
     flex: 1;
   }
