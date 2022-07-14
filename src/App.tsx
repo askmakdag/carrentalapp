@@ -1,10 +1,10 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {Container} from "./components/styled/Container.styled";
-import Card from "./components/Card";
+import {Container} from "./components/styles/Container.styled";
 import {useDispatch} from "react-redux";
 import {useAppSelector} from "./hooks/store-hooks";
 import {getTheFeed} from "./store/mainSlice";
-import StyledText from "./components/styled/Text.styled";
+import Card from "./components/card";
+import Subtitle from "./components/subtitle.styled";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,14 +30,15 @@ function App() {
   }, [feed]);
 
   useEffect(() => {
-      // @ts-ignore
-      dispatch(getTheFeed());
+      if (!cards) {
+        // @ts-ignore
+        dispatch(getTheFeed());
+      }
       generateCards();
-  }, [generateCards, dispatch])
+  }, [generateCards])
 
   return (
     <Container>
-        <StyledText variant={"subtitleMedium"}>sdfsfs</StyledText>
         {cards}
     </Container>
   );

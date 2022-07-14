@@ -7,21 +7,24 @@ const GlobalStyles = createGlobalStyle<{theme: ThemeType}>`
   }
 
   body {
-    background: ${({ theme }) => theme.colors.body};
-    color: hsl(192, 100%, 9%);
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.15em;
+    background: ${({ theme }) => theme.body};
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   p {
-    opacity: 0.6;
-    line-height: 1.5;
+    margin: 0;
   }
-
+  
   img {
     max-width: 100%;
-}
+  }
+  
+  button {
+    font-family: 'Open Sans', sans-serif;
+  }
 `
 
 export default GlobalStyles;
