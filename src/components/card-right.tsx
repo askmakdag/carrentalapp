@@ -32,7 +32,7 @@ export default function CardRight({charge}: {charge: TotalChargeModel }) {
             </div>
 
             <div style={{display: 'flex', flexDirection: 'column'}}>
-                <Button fontSize={20}> Select </Button>
+                <Button fontSize={20}>Select</Button>
 
                 <div className={'bottom__button_container'}>
                     <Envelope size={20} weight={'fill'} style={{marginRight: 4}}/>

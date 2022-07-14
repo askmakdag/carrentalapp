@@ -3,70 +3,74 @@ import styled from 'styled-components'
 export const StyledCardLeft = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 50%;
+  padding: 12px;
 
+  .card__header {}
+  
   .card__body {
     display: flex;
     flex-direction: row;
-  }
 
-  .card__info--left {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-  }
-
-  .card__info--image {
-    img {
-      max-height: 120px;
-      width: 180px;
-    }
-  }
-
-  .card__info--properties {
-    ul {
+    .info__left {
       display: flex;
-      flex-direction: row;
-      padding: 0;
+      flex-direction: column;
+      width: 50%;
     }
 
-    ul li {
-      display: flex;
-      flex-direction: row;
-      padding: 0 12px;
-
+    .info__left--image {
       img {
-        height: 18px;
-        width: 18px;
-        margin-left: 4px;
+        max-height: 120px;
+        width: 180px;
       }
     }
 
-    ul li:not(:last-child) {
-      border-right: solid 1px gray;
+    .info__left--properties {
+      ul {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+      }
+
+      ul li {
+        display: flex;
+        flex-direction: row;
+        padding: 0 12px;
+
+        img {
+          height: 18px;
+          width: 18px;
+          margin-left: 4px;
+        }
+      }
+
+      ul li:not(:last-child) {
+        border-right: solid 1px gray;
+      }
     }
-  }
 
-  .card__info--right {
-    display: flex;
-    flex-direction: column;
-    padding-top: 16px;
-
-    .card__info--right__row {
+    .info__right {
       display: flex;
-      flex-direction: row;
-      padding-bottom: 12px;
-    }
+      flex-direction: column;
+      padding-top: 16px;
 
-    h5 {
-      padding: 0;
-      margin: 0;
-    }
+      .info__right--row {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 12px;
+      }
 
-    img {
-      max-height: 22px;
-      width: 22px;
-      padding-right: 8px;
+      h5 {
+        padding: 0;
+        margin: 0;
+      }
+
+      img {
+        max-height: 22px;
+        width: 22px;
+        padding-right: 8px;
+      }
     }
   }
   
@@ -74,13 +78,14 @@ export const StyledCardLeft = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-
-    .card__info--bottom {
+    
+    .info__bottom {
       width: 50%;
 
       ul {
         list-style-type: none;
-        padding: 0 12px;
+        padding: 0;
+        margin: 0;
       }
       
       li {
@@ -90,7 +95,7 @@ export const StyledCardLeft = styled.div`
       }
     }
 
-    .card__brand {
+    .brand {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -113,42 +118,4 @@ export const StyledCardLeft = styled.div`
       }
     }
   }
-
-    /*display: flex;
-  align-items: center;
-  background-color: #fff;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  margin: 4px 0;
-  padding: 0 20px;
-
-  img {
-    height: 101.5px;
-    width: 180px;
-  }
-
-  ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  li {
-    display: flex;
-    flex-direction: row;
-    align-items: center
-  }
-  
-  h6 {
-    margin: 8px;
-  }
-  
-  & > div {
-    flex: 1;
-  }
-
-  @media (max-width: ${({theme}) => theme.mobile}) {
-    flex-direction: column;
-  }
-  */
 `

@@ -4,7 +4,6 @@ import {useDispatch} from "react-redux";
 import {useAppSelector} from "./hooks/store-hooks";
 import {getTheFeed} from "./store/mainSlice";
 import Card from "./components/card";
-import Subtitle from "./components/subtitle.styled";
 
 function App() {
   const dispatch = useDispatch();

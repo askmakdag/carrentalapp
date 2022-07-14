@@ -17,11 +17,12 @@ export default function CardLeft({item: {Vehicle}, vehRentalCore}: Props) {
             </div>
 
             <div className={'card__body'}>
-                <div className={'card__info--left'}>
-                    <div className={'card__info--image'}>
+                <div className={'info__left'}>
+                    <div className={'info__left--image'}>
                         <img src={Vehicle?.PictureURL}  alt={''} />
                     </div>
-                    <div className={'card__info--properties'}>
+
+                    <div className={'info__left--properties'}>
                         <ul>
                             <CardInfoProperty image={Person} desc={Vehicle['@PassengerQuantity']} />
                             <CardInfoProperty image={Bag} desc={Vehicle['@BaggageQuantity']} />
@@ -30,21 +31,21 @@ export default function CardLeft({item: {Vehicle}, vehRentalCore}: Props) {
                     </div>
                 </div>
 
-                <div className={'card__info--right'}>
+                <div className={'info__right'}>
                     <RightRowWithIconRow image={Plane} title={'Pick-Up Location'} desc={vehRentalCore.PickUpLocation['@Name']}/>
                     <RightRowWithIconRow image={Fuel} title={'Fuel Type'} desc={Vehicle['@FuelType']}/>
                 </div>
             </div>
 
             <div className={'card__footer'}>
-                <div className={'card__info--bottom'}>
+                <div className={'info__bottom'}>
                     <ul>
                         <CardInfoBottomProperty text={`${Vehicle['@TransmissionType']} Transmission`} />
                         <CardInfoBottomProperty text={'Air Conditioning'} />
                     </ul>
                 </div>
 
-                <div className={'card__brand'}>
+                <div className={'brand'}>
                     <img src={Alamo} alt={''} />
                     <span>5.8</span>
                 </div>
@@ -74,12 +75,12 @@ export function CardInfoBottomProperty({text}: { text: string}) {
 
 export function RightRowWithIconRow({image, title, desc}: {image: string, title: string, desc: string}) {
     return (
-        <div className={'card__info--right__row'}>
-            <div className={'card__info--right__image'}>
+        <div className={'info__right--row'}>
+            <div>
                 <img src={image} style={{paddingTop: 4}}  alt={''}/>
             </div>
 
-            <div className={'card__info--right__desc'}>
+            <div>
                 <Text size={'small'} weight={'regular'}>{title}:</Text>
                 <Text size={'medium'} weight={'regular'}>{desc}</Text>
             </div>

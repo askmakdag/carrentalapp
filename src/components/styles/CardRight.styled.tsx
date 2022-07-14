@@ -4,6 +4,7 @@ export const StyledCardRight= styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #EFFFFF;
   width: 25%;
   padding: 12px;
   
@@ -14,8 +15,9 @@ export const StyledCardRight= styled.div`
   }
 
   img {
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
+    margin-top: -8px;
   }
   
   button {
