@@ -1,6 +1,6 @@
 import Text from "./text.styled";
 import React from "react";
-import {StyledCardMiddle} from "./styles/CardMiddle.styled";
+import {StyledCardMiddle} from "./styles/card-middle.styled";
 import {Check} from "phosphor-react";
 
 export default function CardMiddle() {
@@ -32,7 +32,7 @@ export const AttributeText = ({text}: {text: string}) => {
     return (
         <div style={{display: 'flex', alignItems: 'center', paddingLeft: 2}}>
             <Check size={14} weight={'bold'} color={'#157F41'} />
-            <Text size={'small'} weight={'large'} className={'body__body--attribute'}>{text}</Text>
+            <Text size={'small'} weight={'large'} className={'body__body__attribute'}>{text}</Text>
         </div>
     );
 }

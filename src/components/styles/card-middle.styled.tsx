@@ -7,7 +7,6 @@ export const StyledCardMiddle= styled.div`
   padding: 12px;
   width: 25%;
 
-
   .title {
     text-align: center;
     background-color: #157F410D;
@@ -34,7 +33,7 @@ export const StyledCardMiddle= styled.div`
     padding-top: 4px; 
   }
   
-  .body__body--attribute {
+  .body__body__attribute {
     color: #157F41;
     padding: 1px 4px;
   }

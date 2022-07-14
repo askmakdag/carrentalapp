@@ -1,10 +1,10 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {Container} from "./components/styles/Container.styled";
+import {Container} from "./components/styles/container.styled";
 import {useDispatch} from "react-redux";
 import {useAppSelector} from "./hooks/store-hooks";
 import {getTheFeed} from "./store/mainSlice";
 import Card from "./components/card";
-import Subtitle from "./components/subtitle.styled";
+import AlertLine from "./components/alert-line";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,7 +38,9 @@ function App() {
   }, [generateCards])
 
   return (
-    <Container>
+    <Container style={{paddingTop: 8}}>
+        <AlertLine type={'success'} message={'Book today and be confident with our flexible cancellation policy.'} />
+        <br />
         {cards}
     </Container>
   );

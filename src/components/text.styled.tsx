@@ -1,9 +1,10 @@
 import React from "react";
 import styled from 'styled-components'
 import {
-    ColorProps,
-    PositionProps,
-    SpaceProps,
+    color,
+    ColorProps, position,
+    PositionProps, space,
+    SpaceProps, typography,
     TypographyProps,
 } from 'styled-system';
 
@@ -67,10 +68,13 @@ interface Props extends PositionProps, ColorProps, SpaceProps, TypographyProps {
 
 // weight -> regular-400, bold-900, semiBold-700
 const Text = styled.p<Props>`
-    color: ${props => props?.color ?? '#333333'};
     font-size: ${props => getFontSize(props?.size)};
     line-height: ${props => getLineHeight(props?.size)};
     font-weight: ${props => getWeight(props?.weight)};
+    ${color};
+    ${position};
+    ${space};
+    ${typography}
 `;
 
 export default Text;

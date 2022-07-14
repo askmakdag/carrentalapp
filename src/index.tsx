@@ -4,14 +4,13 @@ import App from './App';
 import {store} from "./store";
 import {Provider} from "react-redux";
 import {ThemeProvider} from "styled-components";
-import GlobalStyles from "./components/styles/Global";
+import GlobalStyles from "./components/styles/global";
 import {DarkTheme, DefaultTheme} from "./theme";
 import WebFont from 'webfontloader';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-
 
 function Root() {
     useEffect(() => {
