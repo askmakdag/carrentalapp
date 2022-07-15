@@ -106,15 +106,15 @@ export const StyledCardLeft = styled.div`
       border-radius: 4px;
 
       img {
-        height: 30px;
+        height: 28px;
       }
 
       span {
-        background-color: #ffd500;
         padding: 8px;
         font-size: 12px;
+        font-weight: bold;
         border-radius: 4px;
-        color: #000;
+        color: #FFF;
       }
     }
   }

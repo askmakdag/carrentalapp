@@ -1,7 +1,6 @@
 import styled, {css} from 'styled-components'
 import React from "react";
 
-
 interface Props {
     type: string
     children: React.ReactNode;
