@@ -21,9 +21,10 @@ export default function CardMiddle() {
                 </div>
             </div>
 
-            <Text size={'medium'} weight={'semiBold'} className={'bottom'}>
-                Important Information
-            </Text>
+
+            <div className={'bottom'}>
+                <Text size={'medium'} weight={'semiBold'}>Important Information</Text>
+            </div>
         </StyledCardMiddle>
     );
 }

@@ -42,8 +42,8 @@ export const StyledCardMiddle= styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 40px;
-    width: 200px;
     border: 1px Solid;
     border-radius: 4px;
     cursor: not-allowed;

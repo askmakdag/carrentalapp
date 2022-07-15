@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import {
     color,
     ColorProps, position,
@@ -22,33 +22,78 @@ const enum FontWeight {
     bold = 'bold',
 }
 
-const getFontSize = (size: string) => {
+const getSizeAndHeight = (size: string) => {
     switch (size) {
         case FontSize.xLarge:
-            return '1.75rem';
+            return  css`
+              font-size: 1.75rem;
+              line-height: 2.375rem;
+            `;
         case FontSize.large:
-            return '1.5rem';
+            return  css`
+              font-size: 1.5rem;
+              line-height: 2.063rem;
+            `;
         case FontSize.medium:
-            return '1.25rem';
+            return  css`
+              font-size: 1.25rem;
+              line-height: 2.688rem;
+            `;
         case FontSize.small:
-            return '1.125rem';
-        default:
-            return '1.25rem';
+            return  css`
+              font-size: 1.125rem;
+              line-height: 1.5rem;
+            `;
     }
 }
 
-const getLineHeight = (size: string) => {
+const getSizeAndHeight768 = (size: string) => {
     switch (size) {
         case FontSize.xLarge:
-            return '2.375rem';
+            return  css`
+              font-size: 1.25rem;
+              line-height: 2.688rem;
+            `;
         case FontSize.large:
-            return '2.063rem';
+            return  css`
+              font-size: 1rem;
+              line-height: 1.375rem;
+            `;
         case FontSize.medium:
-            return '2.688rem';
+            return  css`
+              font-size: 0.875rem;
+              line-height: 1.188rem;
+            `;
         case FontSize.small:
-            return '1.5rem';
-        default:
-            return '2.688rem';
+            return  css`
+              font-size: 0.75rem;
+              line-height: 1.063rem;
+            `;
+    }
+}
+
+const getSizeAndHeight425 = (size: string) => {
+    switch (size) {
+        case FontSize.xLarge:
+            return  css`
+              font-size: 1rem;
+              line-height: 1.375rem;
+            `;
+        case FontSize.large:
+            return  css`
+              font-size: 0.875rem;
+              line-height: 1.188rem;
+            `;
+        case FontSize.medium:
+            return  css`
+              font-size: 0.75rem;
+              line-height: 1.063rem;
+            `;
+        case FontSize.small:
+            return  css`
+              font-size: 0.5rem;
+              line-height: 0.563rem;
+            `;
     }
 }
 
@@ -60,8 +105,6 @@ const getWeight = (weight: string) => {
             return 700;
         case FontWeight.bold:
             return 900;
-        default:
-            return 400;
     }
 }
 
@@ -73,13 +116,21 @@ interface Props extends PositionProps, ColorProps, SpaceProps, TypographyProps {
 
 // weight -> regular-400, bold-900, semiBold-700
 const Subtitle = styled.p<Props>`
-    font-size: ${props => getFontSize(props?.size)};
-    line-height: ${props => getLineHeight(props?.size)};
-    font-weight: ${props => getWeight(props?.weight)};
-    ${color};
-    ${position};
-    ${space};
-   ${typography}
+  font-weight: ${props => getWeight(props?.weight)};
+  ${props => getSizeAndHeight(props?.size)};
+  {
+    @media (max-width: 768px) {
+      ${props => getSizeAndHeight768(props?.size)};
+    }
+  
+    @media (max-width: 425px) {
+      ${props => getSizeAndHeight425(props?.size)};
+    }
+  }
+  ${color};
+  ${position};
+  ${space};
+  ${typography}
 `;
 
 export default Subtitle;
