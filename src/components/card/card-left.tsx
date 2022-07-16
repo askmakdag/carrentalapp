@@ -1,17 +1,20 @@
-import {StyledCardLeft} from "./styles/card-left.styled";
-import {Bag, Door, Fuel, Person, Plane} from "../assets";
-import {VehicleAvailabilityModel, VehicleRentalCoreModel, VendorModel} from "../types/models";
+import {StyledCardLeft} from "../styles/card/card-left.styled";
+import {Bag, Door, Fuel, Person, Plane} from "../../assets";
 import React from "react";
-import Subtitle from "./subtitle.styled";
-import Text from "./text.styled";
+import Subtitle from "../subtitle.styled";
+import Text from "../text.styled";
 import {Check} from "phosphor-react";
-import {Vendors} from "../types/constants/vendors.const";
+import {Vendors} from "../../types/constants/vendors.const";
+import {useAppSelector} from "../../hooks/store-hooks";
+import {AvailableVehicle} from "../../types/models/AvailableVehicle";
 
-export type Props = {item: VehicleAvailabilityModel, vendor: VendorModel, vehRentalCore: VehicleRentalCoreModel};
-
-export default function CardLeft({item: {Vehicle}, vendor, vehRentalCore}: Props) {
+export type Props = {item: AvailableVehicle};
+export default function CardLeft(props: Props) {
+    const {Vehicle, Vendor} = props.item;
+    const {vehRentalCore} = useAppSelector(s => s.main);
     // @ts-ignore
-    const theVendor = Vendors[vendor['@Code']];
+    const theVendor = Vendors[Vendor['@Code']];
+
     return (
         <StyledCardLeft>
             <div className={'card__header'}>
@@ -34,7 +37,7 @@ export default function CardLeft({item: {Vehicle}, vendor, vehRentalCore}: Props
                 </div>
 
                 <div className={'info__right'}>
-                    <RightRowWithIconRow image={Plane} title={'Pick-Up Location'} desc={vehRentalCore.PickUpLocation['@Name']}/>
+                    <RightRowWithIconRow image={Plane} title={'Pick-Up Location'} desc={vehRentalCore?.PickUpLocation?.['@Name']}/>
                     <RightRowWithIconRow image={Fuel} title={'Fuel Type'} desc={Vehicle['@FuelType']}/>
                 </div>
             </div>
@@ -49,14 +52,14 @@ export default function CardLeft({item: {Vehicle}, vendor, vehRentalCore}: Props
 
                 <div className={'brand'}>
                     <img src={theVendor} alt={''} />
-                    <span style={getColorByRating(+vendor['@Rating'])}>{vendor['@Rating']}</span>
+                    <span style={getColorByRating(+Vendor['@Rating'])}>{Vendor['@Rating']}</span>
                 </div>
             </div>
         </StyledCardLeft>
     );
 }
 
-export function CardInfoProperty({image, desc}: { image: string, desc: string}) {
+export function CardInfoProperty({image, desc}: {image: string, desc: string}) {
     return (
         <li>
             <span>{desc}</span>
@@ -66,7 +69,7 @@ export function CardInfoProperty({image, desc}: { image: string, desc: string}) 
     )
 }
 
-export function CardInfoBottomProperty({text}: { text: string}) {
+export function CardInfoBottomProperty({text}: {text: string}) {
     return (
         <li>
             <Check size={12} weight={'bold'} style={{marginRight: 4}}/>
@@ -75,14 +78,14 @@ export function CardInfoBottomProperty({text}: { text: string}) {
     )
 }
 
-export function RightRowWithIconRow({image, title, desc}: {image: string, title: string, desc: string}) {
+export function RightRowWithIconRow({image, title, desc}: {image: string, title: string, desc?: string}) {
     return (
         <div className={'info__right__row'}>
-            <div>
-                <img src={image} style={{paddingTop: 4}}  alt={''}/>
+            <div style={{flex: 2}}>
+                <img src={image} alt={''}/>
             </div>
 
-            <div>
+            <div  style={{flex: 10}}>
                 <Text size={'small'} weight={'regular'}>{title}:</Text>
                 <Text size={'medium'} weight={'regular'}>{desc}</Text>
             </div>

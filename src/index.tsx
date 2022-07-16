@@ -7,6 +7,8 @@ import {ThemeProvider} from "styled-components";
 import GlobalStyles from "./components/styles/global";
 import {DarkTheme, DefaultTheme} from "./theme";
 import WebFont from 'webfontloader';
+import {BrowserRouter} from "react-router-dom";
+import {Helmet} from "react-helmet";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,12 +24,21 @@ function Root() {
     }, []);
 
     return (
-        <Provider store={store}>
-            <ThemeProvider theme={theme}>
-                <GlobalStyles />
-                <App />
-            </ThemeProvider>
-        </Provider>
+        <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Rent The Car</title>
+            </Helmet>
+
+            <Provider store={store}>
+                <ThemeProvider theme={theme}>
+                    <GlobalStyles />
+                    <BrowserRouter>
+                        <App />
+                    </BrowserRouter>
+                </ThemeProvider>
+            </Provider>
+        </>
     );
 }
 

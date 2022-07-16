@@ -2,6 +2,7 @@ import {TransmissionTypeEnum, FuelTypeEnum, DriveTypeEnum, BaggageQuantityEnum, 
 import {DoorCountEnum} from "../enums/door-count.enum";
 
 export interface VehicleModel {
+    "@ID": string,
     "@AirConditionInd": boolean,
     "@TransmissionType": TransmissionTypeEnum,
     "@FuelType": FuelTypeEnum,

@@ -22,6 +22,7 @@
             {
               "@Status": "Available",
               "Vehicle": {
+                "@ID": "48c8ae0b-54e8-4d68-a22a-f95a440bab12",
                 "@AirConditionInd": "true",
                 "@TransmissionType": "Automatic",
                 "@FuelType": "Petrol",
@@ -45,6 +46,7 @@
             {
               "@Status": "Available",
               "Vehicle": {
+                "@ID": "f9bc6fa1-cae5-4176-a59b-fc8514e5534b",
                 "@AirConditionInd": "true",
                 "@TransmissionType": "Automatic",
                 "@FuelType": "Petrol",
@@ -77,6 +79,7 @@
             {
               "@Status": "Available",
               "Vehicle": {
+                "@ID": "6c9b2664-1735-4149-b66a-f1ab996cfb43",
                 "@AirConditionInd": "true",
                 "@TransmissionType": "Automatic",
                 "@FuelType": "Petrol",
@@ -100,6 +103,7 @@
             {
               "@Status": "Available",
               "Vehicle": {
+                "@ID": "ce8e18ba-3bdc-4e3a-be23-b80e1e76ad17",
                 "@AirConditionInd": "true",
                 "@TransmissionType": "Automatic",
                 "@FuelType": "Petrol",
@@ -123,6 +127,7 @@
             {
               "@Status": "Available",
               "Vehicle": {
+                "@ID": "785a5c2a-bb8b-4214-80bf-f313544a06d1",
                 "@AirConditionInd": "true",
                 "@TransmissionType": "Automatic",
                 "@FuelType": "Petrol",
@@ -146,6 +151,7 @@
             {
               "@Status": "Available",
               "Vehicle": {
+                "@ID": "ecf5fd64-86c3-488d-a6d7-086a236eab92",
                 "@AirConditionInd": "true",
                 "@TransmissionType": "Automatic",
                 "@FuelType": "Petrol",
@@ -169,6 +175,7 @@
             {
               "@Status": "Available",
               "Vehicle": {
+                "@ID": "f7da96e1-7654-4822-bf89-db1c410bd46e",
                 "@AirConditionInd": "true",
                 "@TransmissionType": "Automatic",
                 "@FuelType": "Petrol",
@@ -202,6 +209,7 @@
             {
               "@Status": "Available",
               "Vehicle": {
+                "@ID": "c274d17e-07ab-48fe-ad60-dfa2a9774f9c",
                 "@AirConditionInd": "true",
                 "@TransmissionType": "Automatic",
                 "@FuelType": "Petrol",
@@ -226,6 +234,7 @@
             {
               "@Status": "Available",
               "Vehicle": {
+                "@ID": "e21a3e8a-fa26-4c7a-9122-609e5b880b76",
                 "@AirConditionInd": "true",
                 "@TransmissionType": "Automatic",
                 "@FuelType": "Petrol",
@@ -249,6 +258,7 @@
             {
               "@Status": "Available",
               "Vehicle": {
+                "@ID": "efbe76d2-4697-4126-aa8b-a69147947210",
                 "@AirConditionInd": "true",
                 "@TransmissionType": "Automatic",
                 "@FuelType": "Petrol",

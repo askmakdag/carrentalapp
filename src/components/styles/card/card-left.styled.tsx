@@ -4,7 +4,7 @@ export const StyledCardLeft = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50%;
+  flex: 2;
   padding: 12px;
 
   .card__header {}
@@ -16,7 +16,7 @@ export const StyledCardLeft = styled.div`
     .info__left {
       display: flex;
       flex-direction: column;
-      width: 50%;
+      flex: 1;
     }
 
     .info__left__image {
@@ -29,15 +29,19 @@ export const StyledCardLeft = styled.div`
     .info__left__properties {
       ul {
         display: flex;
-        flex-direction: row;
         padding: 0;
       }
 
       ul li {
         display: flex;
         flex-direction: row;
+        align-items: center;
         padding: 0 12px;
 
+        @media (max-width: 768px) {
+          flex-direction: column;
+        }
+        
         img {
           height: 18px;
           width: 18px;
@@ -52,6 +56,7 @@ export const StyledCardLeft = styled.div`
 
     .info__right {
       display: flex;
+      flex: 1;
       flex-direction: column;
       padding-top: 16px;
 
@@ -67,7 +72,7 @@ export const StyledCardLeft = styled.div`
       }
 
       img {
-        max-height: 22px;
+        height: 22px;
         width: 22px;
         padding-right: 8px;
       }
@@ -80,7 +85,7 @@ export const StyledCardLeft = styled.div`
     align-items: center;
     
     .info__bottom {
-      width: 50%;
+      flex: 1;
 
       ul {
         list-style-type: none;
@@ -97,9 +102,9 @@ export const StyledCardLeft = styled.div`
 
     .brand {
       display: flex;
+      flex: 1;
       justify-content: space-between;
       align-items: center;
-      width: 50%;
       height: 40px;
       border: 1px solid #C7C7CD;
       padding: 0 4px;

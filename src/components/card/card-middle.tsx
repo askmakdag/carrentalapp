@@ -1,6 +1,6 @@
-import Text from "./text.styled";
+import Text from "../text.styled";
 import React from "react";
-import {StyledCardMiddle} from "./styles/card-middle.styled";
+import {StyledCardMiddle} from "../styles/card/card-middle.styled";
 import {Check} from "phosphor-react";
 
 export default function CardMiddle() {

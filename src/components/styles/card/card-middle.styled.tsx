@@ -2,11 +2,15 @@ import styled from 'styled-components'
 
 export const StyledCardMiddle= styled.div`
   display: flex;
+  flex: 1;
   justify-content: space-between;
   flex-direction: column;
   padding: 12px;
-  width: 25%;
 
+  @media (max-width: 425px) {
+    display: none;
+  }
+  
   .title {
     text-align: center;
     background-color: #157F410D;

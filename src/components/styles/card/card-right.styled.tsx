@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 export const StyledCardRight= styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
   background-color: #EFFFFF;
-  width: 25%;
   padding: 12px;
   
   .title {
