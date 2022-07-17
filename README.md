@@ -22,7 +22,7 @@ yarn install
 
 ### 2. Start JSON Server
 
-In this project there is a local json server created by json server.
+In this project there is a local server created by json server.
 
 In order to be able to make request;
 
@@ -44,10 +44,7 @@ In case of the warning:  'Would you like to run the app on another port instead?
 
 Click yes and continue, you will get a link with an updated port 
 
-Click the link and view the page on your browser. 
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Click the link and view the page on your browser.
 
 
 ### `npm run build`
