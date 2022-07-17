@@ -10,12 +10,12 @@ import {Envelope} from "phosphor-react";
 import {MilesAndMore} from "../../assets/other";
 import {useNavigate} from "react-router-dom";
 import {AvailableVehicle} from "../../types/models/AvailableVehicle";
-import {useDispatch} from "react-redux";
 import {setSelectedVehicle} from "../../store/mainSlice";
+import {useAppDispatch} from "../../hooks/store-hooks";
 
 export type Props = {item: AvailableVehicle};
 export default function CardRight({item}: Props) {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const navigate = useNavigate();
     const charge = item?.TotalCharge;
 

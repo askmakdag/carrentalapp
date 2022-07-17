@@ -26,7 +26,6 @@ function Root() {
     return (
         <>
             <Helmet>
-                <meta charSet="utf-8" />
                 <title>Rent The Car</title>
             </Helmet>
 
@@ -43,7 +42,8 @@ function Root() {
 }
 
 
-// In need, we can add dark theme support...
+// In need, we can add dark theme support.
+// We are going to use the light mode by default in this case...
 const theTheme = 'light';
 const theme = theTheme === 'light' ? DefaultTheme : DarkTheme;
 
