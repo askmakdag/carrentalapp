@@ -10,7 +10,7 @@ export const StyledPickupReturn = styled.div<Props>`
   flex-direction: column;
   align-items: center;
   background-color: white;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.075);
+  box-shadow: 0 0 12px rgba(0, 0, 1, 0.075);
   padding-bottom: 16px;
   
   .header {

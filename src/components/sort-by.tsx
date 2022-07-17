@@ -7,7 +7,7 @@ import {OrderByEnum} from "../types/enums/order-by.enum";
 
 export default function SortBy() {
     const dispatch = useAppDispatch();
-    const {orderBy, availableVehicles} = useAppSelector(s => s.main);
+    const {sortBy, orderBy, availableVehicles} = useAppSelector(s => s.main);
 
     useEffect(() => {
         if (availableVehicles.length !== 0 && !orderBy) {
@@ -15,24 +15,24 @@ export default function SortBy() {
         }
     }, [availableVehicles]);
 
-    useEffect(() => {
-        if (orderBy) {
-            dispatch(sortTheVehicles(OrderByEnum.LowToHigh));
-        }
-    }, [orderBy]);
+    const onSelected = (e) => {
+        dispatch(sortTheVehicles(e.target.value));
+    }
 
     return (
         <StyledSortBy>
             <div className={'left'}>
-                <Text size={'small'} weight={'regular'}>24 Cars available</Text>
+                <Text size={'medium'} weight={'bold'} style={{marginRight: 4}}>{availableVehicles.length}</Text>
+                <Text size={'small'} weight={'regular'}>cars available</Text>
             </div>
 
             <div className={'right'}>
-                <Text size={'medium'} weight={'regular'}>Sort By Price -- </Text>
+                <Text size={'large'} weight={'regular'}>Sort By: </Text>
 
-                <div className={'dropdown'}>
-                    <Text size={'medium'} weight={'regular'}>Low To High</Text>
-                </div>
+                <select className={'dropdown'} onChange={onSelected}>
+                    <option value={OrderByEnum.LowToHigh}>{sortBy} (low to high)</option>
+                    <option value={OrderByEnum.HighToLow}>{sortBy} (high to low)</option>
+                </select>
             </div>
         </StyledSortBy>
     );

@@ -10,7 +10,6 @@ export const StyledSortBy = styled.div<Props>`
   justify-content: space-between;
   align-items: center;
   padding: 4px 8px;
-  background-color: pink;
   
   .left {
     display: flex;
@@ -23,6 +22,11 @@ export const StyledSortBy = styled.div<Props>`
   }
   
   .dropdown {
-    
+    margin-left: 8px;
+    color: #FFFFFF;
+    background-color: #E6356F;
+    border: 1px Solid #E6356F;
+    padding: 4px 16px;
+    border-radius: 4px;
   }
 `

@@ -32,3 +32,9 @@ export function formatMoney(amount:  number, currency: string) {
     const locale = getBrowserLocales()?.[0];
     return `${getSymbolFromCurrency(currency)} ${amount.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
 }
+
+export function dateFormat(date) {
+    const moment = require('moment');
+    const d = new Date(date);
+    return moment(d).format('D MMMM YYYY, h:mm a')
+}

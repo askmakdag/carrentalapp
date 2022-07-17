@@ -64,18 +64,18 @@ const listTheVehicles = (data: RentalCarModel) => {
 
 const sortBy = (list: AvailableVehicle[], type: SortByEnum, orderBy: OrderByEnum) => {
     if (type === SortByEnum.Price) {
-        return list.slice().sort(compareByPrice);
+        return list.slice().sort((a,b) => compareByPrice(a, b, orderBy));
     }
 
     return list;
 }
 
-function compareByPrice(a: AvailableVehicle, b: AvailableVehicle) {
+function compareByPrice(a: AvailableVehicle, b: AvailableVehicle, orderBy: OrderByEnum) {
     if (+a.TotalCharge["@RateTotalAmount"] < +b.TotalCharge["@RateTotalAmount"]) {
-        return -1;
+        return orderBy === OrderByEnum.LowToHigh ? -1 : 1;
     }
     if (+a.TotalCharge["@RateTotalAmount"] > +b.TotalCharge["@RateTotalAmount"]) {
-        return 1;
+        return orderBy === OrderByEnum.LowToHigh ? 1 : -1;
     }
     return 0;
 }

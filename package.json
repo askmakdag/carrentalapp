@@ -16,6 +16,7 @@
     "@types/webfontloader": "^1.6.34",
     "axios": "^0.27.2",
     "currency-symbol-map": "^5.1.0",
+    "moment": "^2.29.4",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
