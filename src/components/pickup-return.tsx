@@ -2,7 +2,6 @@ import React from "react";
 import {MapPin} from "phosphor-react";
 import Text from "./text.styled";
 import {StyledPickupReturn} from "./styles/pickup-return.styled";
-import Subtitle from "./subtitle.styled";
 import {useAppSelector} from "../hooks/store-hooks";
 import {dateFormat} from "../helpers/format";
 
@@ -11,7 +10,7 @@ export default function PickupReturn() {
     return (
         <StyledPickupReturn>
             <div className={'header'}>
-                <Subtitle size={'small'} weight={'regular'}>Search details</Subtitle>
+                <Text size={'medium'} weight={'regular'}>Search details</Text>
             </div>
 
             <div className={'body'}>
