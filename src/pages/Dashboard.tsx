@@ -18,7 +18,7 @@ export default function Dashboard() {
     }, []);
 
     return (
-        <Container style={{paddingTop: 8}}>
+        <Container>
             <AlertLine type={'success'} message={'Book today and be confident with our flexible cancellation policy.'} />
             <br />
             {availableVehicles.map((item, index) => {
