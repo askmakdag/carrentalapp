@@ -8,7 +8,6 @@ import {dateFormat} from "../helpers/format";
 
 export default function PickupReturn() {
     const {vehRentalCore} = useAppSelector(s => s.main);
-    console.log('dateFormat: ', dateFormat(vehRentalCore?.['@PickUpDateTime']))
     return (
         <StyledPickupReturn>
             <div className={'header'}>

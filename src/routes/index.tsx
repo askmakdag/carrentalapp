@@ -1,6 +1,7 @@
 import Dashboard from "../pages/Dashboard";
 import CarDetails from "../pages/CarDetails";
 import Layout from "../pages/layout";
+import PageNotFound from "../pages/page-not-found";
 
 
 export interface routeElement {
@@ -23,6 +24,10 @@ const routes: routeElement[] = [
             {
                 path: '/detail/:id',
                 element: <CarDetails />
+            },
+            {
+                path: '*',
+                element: <PageNotFound />
             }
         ]
     }
