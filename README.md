@@ -24,6 +24,8 @@ yarn install
 
 In this project there is a local server created by json server.
 
+The json data is located in - [`src/services/mockDB`](src/services/mockDB)
+
 In order to be able to make request;
 
 In the project directory, run:
