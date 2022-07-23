@@ -11,7 +11,7 @@ import {BrowserRouter} from "react-router-dom";
 import {Helmet} from "react-helmet";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById('root')
 );
 
 function Root() {
